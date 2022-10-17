@@ -61,4 +61,18 @@ public class LogAnalyzer
     {
         reader.printData();
     }
+    /**
+     * This method returns the amount of log accesses from the log file.
+     * @return accesses
+     */
+    public int numberOfAccesses()
+    {
+        int accesses = 0;
+        for(int i = 0;i <hourCounts.length; i ++)
+        {
+            accesses += hourCounts[i];
+        }
+        
+        return accesses;
+    }
 }
