@@ -75,4 +75,36 @@ public class LogAnalyzer
         
         return accesses;
     }
+    /**
+     * This method will return the busiest hour
+     * @return hour
+     */
+    public int busiestHour()
+    {
+        int hour = hourCounts[0];
+        for( int i = 0; i < hourCounts.length; i++)
+        {
+            if(hourCounts[i] > hourCounts[hour])
+                {
+                    hour = i;
+                }
+        }
+        return hour;
+    }
+    /**
+     * This method will return the quietest hour
+     * @return hour
+     */
+    public int quietestHour()
+    {
+        int hour = hourCounts[0];
+        for( int i = 0; i < hourCounts.length; i++)
+        {
+            if(hourCounts[i] < hourCounts[hour])
+                {
+                    hour = i;
+                }
+        }
+        return hour;
+    }
 }
