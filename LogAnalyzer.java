@@ -107,4 +107,22 @@ public class LogAnalyzer
         }
         return hour;
     }
+    
+    /**
+     * This method calculates the busiest pair of hours and returns the first 
+     * value of the pair.
+     * @return firstPair 
+     */
+    public int busiestTwoHourPeriod()
+    {
+        int firstOfPair = 0;
+        
+        for(int i = 0; i < hourCounts.length; i++)
+            if( hourCounts[(firstOfPair + 1)] + hourCounts[firstOfPair]< hourCounts[i] + hourCounts[(i + 1)%24])
+            {
+                firstOfPair = i;
+            }
+                
+        return firstOfPair;
+    }
 }
