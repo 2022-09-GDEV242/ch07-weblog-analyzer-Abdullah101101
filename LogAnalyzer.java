@@ -1,8 +1,10 @@
 /**
- * Read web server data and analyse hourly access patterns.
+ * Read web server data and analyse hourly, daily, and monthly access patterns.
+ * Supplies multiple kinds of trends occuring in the log file
  * 
  * @author David J. Barnes and Michael Kölling.
- * @version    2016.02.29
+ * @editor Abdullah
+ * @version    2022.10.16
  */
 public class LogAnalyzer
 {
@@ -22,6 +24,10 @@ public class LogAnalyzer
         // Create the reader to obtain the data.
         reader = new LogfileReader("demo.log");
     }
+    public LogAnalyzer(String fileName)
+        // Create the array object to hold the hourly access counts.
+        hourCounts = new int[24];
+        reader = new LogfileReader(fileName);        
 
     /**
      * Analyze the hourly access data from the log file.
